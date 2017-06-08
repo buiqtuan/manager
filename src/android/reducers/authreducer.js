@@ -9,8 +9,6 @@ from '../actions/types';
 const INIT_STATE = { email: '', password: '', user: null, error: '', loading: false };
 
 export default (state = INIT_STATE, action) => {
-	console.log(action);
-
 	switch (action.type) {
 		case EMAIL_CHANGE:
 			return { ...state, email: action.payload };
