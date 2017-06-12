@@ -2,7 +2,7 @@ import React from 'react';
 import _ from 'lodash';
 import { ListView } from 'react-native';
 import { connect } from 'react-redux';
-import employeesFetch from '../actions/employeeactions';
+import { employeesFetch } from '../actions/employeeactions';
 import ListItem from './listitem';
 
 class EmployeeList extends React.Component {
@@ -14,6 +14,10 @@ class EmployeeList extends React.Component {
 
 	componentWillReceiveProps(nextProps) {
 		this.createDataSource(nextProps);
+	}
+
+	componentWillUnmount() {
+		//remove listenner on firebase
 	}
 
 	createDataSource({ employees }) {
